@@ -45,7 +45,7 @@ Figure 1: Don’t be like this
 <pre class="r"><code>blogdown::hugo_version()</code></pre>
 <p>Then you can reference your <a href="https://themes.gohugo.io/">Hugo theme</a> to find the minimum version of Hugo required by your theme:</p>
 <div class="figure"><span id="fig:unnamed-chunk-3"></span>
-<img src="hugo-min-version.png" alt="Check your theme's minimum Hugo version" width="1073" />
+<img src="hugo-min-version.png" alt="Check your theme's minimum Hugo version"  />
 <p class="caption">
 Figure 2: Check your theme’s minimum Hugo version
 </p>
@@ -54,7 +54,7 @@ Figure 2: Check your theme’s minimum Hugo version
 <pre class="r"><code>blogdown:: update_hugo()</code></pre>
 <p>Check your version again post-update:</p>
 <pre class="r"><code>blogdown::hugo_version()</code></pre>
-<pre><code>## [1] &#39;0.55.6&#39;</code></pre>
+<pre><code>## [1] &#39;0.59.0&#39;</code></pre>
 <p>If you are using Netlify to build your site using Hugo, you’ll want this version to match that- the best way to do that is with a <a href="/post/2019-02-19-hugo-netlify-toml/">netlify.toml file</a>.</p>
 </div>
 <div id="change-the-baseurl" class="section level1">
@@ -75,7 +75,7 @@ if you do not have a domain, set &quot;baseurl&quot; to &quot;/&quot;</code></pr
 </blockquote>
 <p>The main error that would happen without the trailing slash in the past is that you would end up with a site where the theme’s CSS would be all wrong. This was probably because the theme designer used code like this buried in a layout file:</p>
 <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;{{ .Site.BaseURL }}css/style.css&quot;/&gt;</code></pre>
-<p>Now, if you set <code>baseurl = &quot;http://mysite.com&quot;</code> but only rendered locally, things would look just peachy, because the default local server already included the trailing slash. So, the link in the html file would be<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>:</p>
+<p>Now, if you set <code>baseurl = "http://mysite.com"</code> but only rendered locally, things would look just peachy, because the default local server already included the trailing slash. So, the link in the html file would be<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>:</p>
 <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;http://localhost:1313/css/style.css&quot;&gt;</code></pre>
 <p>But, at build, the link in the html file would turn into:</p>
 <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;http://mysite.comcss/style.css&quot;&gt;</code></pre>
